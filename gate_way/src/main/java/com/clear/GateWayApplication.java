@@ -7,6 +7,12 @@ import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
 
+/**
+ *
+ * @author qml
+ * @date 2021/3/1 17:14
+ * @return
+ **/
 @SpringBootApplication
 @EnableDiscoveryClient
 public class GateWayApplication {
