@@ -1,0 +1,17 @@
+
+management:
+  metrics:
+    export:
+      prometheus:
+       enabled: true
+  endpoints:
+    web:
+      exposure:
+       include: "*"
+  endpoint:
+    prometheus:
+      enabled: true
+    metrics:
+      enabled: true
+server:
+  port: 8340
