@@ -32,7 +32,7 @@ public class UseHelloController {
     @Resource
     private HelloService helloService;
 
-    @Value("${client1-config}")
+    @Value("${name}")
     private String client1Config;
 
 
