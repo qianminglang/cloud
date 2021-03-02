@@ -51,4 +51,9 @@ public class HelloFacadeImpl8308 implements HelloFacade {
     public void updateUserById(@RequestHeader String name, @RequestHeader Long id) {
         System.out.println("name:" + name + ";id:" + id);
     }
+
+    @Override
+    public String foo(String foo) {
+        return "foo"+port;
+    }
 }

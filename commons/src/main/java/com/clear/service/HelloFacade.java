@@ -21,4 +21,7 @@ public interface HelloFacade {
     User addUser(@RequestBody User user);
     @PutMapping("/user")
     void updateUserById(@RequestHeader("name") String name, @RequestHeader("id") Long id);
+
+    @RequestMapping("/foo")
+    String foo(@RequestParam("foo")String foo);
 }

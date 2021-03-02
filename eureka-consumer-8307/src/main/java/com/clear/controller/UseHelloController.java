@@ -31,6 +31,7 @@ public class UseHelloController {
     @Resource
     private HelloService helloService;
 
+
     int count = 0;
 
     @GetMapping("/hello")
@@ -39,7 +40,7 @@ public class UseHelloController {
 //        ServiceInstance serviceInstance = providers.get(count % providers.size());
 //        count++;
 //        String host = serviceInstance.getHost();
-//        int port = serviceInstance.getPort();
+//        int port = serviceInstance.getPort();FeignService
 //        String result = restTemplate.getForObject("http://" + host + ":" + port + "/hello?name={1}", String.class, name);
 
 //        String result = restTemplate.getForObject("http://provider/hello?name={1}", String.class, name);
@@ -52,5 +53,10 @@ public class UseHelloController {
         Retry retry = Retry.of("id", config);
         Try<String> result = Try.ofSupplier(Retry.decorateSupplier(retry, () -> helloService.hello(name)));
         return result.get();
+    }
+
+    @GetMapping("/foo")
+    public String foo(String foo) {
+        return helloService.foo(foo);
     }
 }
