@@ -4,6 +4,7 @@ import com.clear.service.HelloService;
 import io.github.resilience4j.retry.Retry;
 import io.github.resilience4j.retry.RetryConfig;
 import io.vavr.control.Try;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,6 +32,9 @@ public class UseHelloController {
     @Resource
     private HelloService helloService;
 
+    @Value("${client1-config}")
+    private String client1Config;
+
 
     int count = 0;
 
@@ -57,6 +61,6 @@ public class UseHelloController {
 
     @GetMapping("/foo")
     public String foo(String foo) {
-        return helloService.foo(foo);
+        return helloService.foo(foo+" "+client1Config);
     }
 }

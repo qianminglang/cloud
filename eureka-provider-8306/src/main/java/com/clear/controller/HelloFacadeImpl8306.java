@@ -18,6 +18,9 @@ public class HelloFacadeImpl8306 implements HelloFacade {
     @Value("${server.port}")
     private int port;
 
+    @Value("${name}")
+    String name;
+
     @Override
     public String hello(String name) {
         System.out.println(port+name);
@@ -52,6 +55,6 @@ public class HelloFacadeImpl8306 implements HelloFacade {
 
     @Override
     public String foo(String foo) {
-        return "foo"+port;
+        return "foo"+port+name;
     }
 }
